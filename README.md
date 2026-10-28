@@ -1,5 +1,7 @@
 # 🎵 Fatores de Sucesso no Streaming Musical (Spotify, Deezer, Apple Music & Shazam)
 
+> 🌐 **Language / Idioma:** [English](README_en.md) • **Português**
+
 ![SQL BigQuery](https://img.shields.io/badge/SQL-Google_BigQuery-4285F4?logo=googlebigquery&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-Statsmodels_%7C_SciPy_%7C_Scikit--Learn-3776AB?logo=python&logoColor=white)
 ![Power BI](https://img.shields.io/badge/BI-Power_BI-F2C811?logo=powerbi&logoColor=black)
@@ -7,9 +9,9 @@
 > **Resumo Executivo:** Uma gravadora levantou **5 hipóteses de negócio** sobre o que faz uma faixa musical alcançar o topo dos rankings de streaming para orientar o lançamento de um novo artista. Este estudo integrou dados de **948 faixas e 644 artistas** (Spotify, Apple Music, Deezer e Shazam) no Google BigQuery e Python, aplicando testes de normalidade (Shapiro-Wilk), testes não-paramétricos (Mann-Whitney e Kruskal-Wallis), Regressão Linear Simples e Múltipla (OLS com diagnóstico de multicolinearidade VIF) e análise de nicho das **152 faixas "Top Hits" ($\ge 1$ bilhão de streams)**.
 
 🔗 **Links Rápidos:**
+- 📓 [Relatório Completo no Notion](https://app.notion.com/p/FICHA-T-CNICA_-PROJETO-2-HIP-TESES-200b5d322028808ba872c03248cce5ac?source=copy_link)
 - 📓 [Notebook Completo no Google Colab (Testes Estatísticos e Regressões em Python)](https://colab.research.google.com/drive/1quOxk92ReWGKQInZWJTejArk3STQUP76?usp=sharing)
 - 📊 [Apresentação Executiva (Google Slides)](https://docs.google.com/presentation/d/1YaAlAVo6Mgmx3_J5_hPPOMxjTDW1e4HEAwfG4YMLL7s/edit?usp=sharing)
-- 📄 [Ficha Técnica Completa com Gráficos (PDF)](./reports/FICHA_TECNICA_PROJETO_2_HIPOTESES.pdf)
 
 ---
 
@@ -51,12 +53,11 @@ Embora atributos acústicos isolados não expliquem linearmente o volume global 
 
 ```text
 music-streaming-success-factors/
-├── README.md                                        # Documentação executiva e síntese das 5 hipóteses
+├── README.md                                        # Documentação executiva (Português)
+├── README_en.md                                     # Executive documentation (English)
 ├── sql/
 │   ├── 01_data_cleaning_regex.sql                   # Deduplicação e limpeza com REGEXP no BigQuery
 │   └── 02_unified_dataset_and_correlations.sql      # Tabela unificada, quartis, correlações e recorte Top Hits
-├── src/
-│   └── statistical_hypothesis_tests.py              # Shapiro-Wilk, OLS Simples/Múltipla, VIF, Mann-Whitney e Kruskal-Wallis
-└── reports/
-    └── FICHA_TECNICA_PROJETO_2_HIPOTESES.pdf        # Relatório completo com gráficos e saídas estatísticas
+└── src/
+    └── statistical_hypothesis_tests.py              # Shapiro-Wilk, OLS Simples/Múltipla, VIF, Mann-Whitney e Kruskal-Wallis
 ```
