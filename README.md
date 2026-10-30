@@ -1,6 +1,6 @@
-# 🎵 Fatores de Sucesso no Streaming Musical (Spotify, Deezer, Apple Music & Shazam)
+# Fatores de Sucesso no Streaming Musical (Spotify, Deezer, Apple Music & Shazam)
 
-> 🌐 **Language / Idioma:** [English](README_en.md) • **Português**
+>  **Language / Idioma:** [English](README_en.md) • **Português**
 
 ![SQL BigQuery](https://img.shields.io/badge/SQL-Google_BigQuery-4285F4?logo=googlebigquery&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-Statsmodels_%7C_SciPy_%7C_Scikit--Learn-3776AB?logo=python&logoColor=white)
@@ -8,10 +8,10 @@
 
 > **Resumo Executivo:** Uma gravadora levantou **5 hipóteses de negócio** sobre o que faz uma faixa musical alcançar o topo dos rankings de streaming para orientar o lançamento de um novo artista. Este estudo integrou dados de **948 faixas e 644 artistas** (Spotify, Apple Music, Deezer e Shazam) no Google BigQuery e Python, aplicando testes de normalidade (Shapiro-Wilk), testes não-paramétricos (Mann-Whitney e Kruskal-Wallis), Regressão Linear Simples e Múltipla (OLS com diagnóstico de multicolinearidade VIF) e análise de nicho das **152 faixas "Top Hits" ($\ge 1$ bilhão de streams)**.
 
-🔗 **Links Rápidos:**
-- 📓 [Relatório Completo no Notion](https://app.notion.com/p/FICHA-T-CNICA_-PROJETO-2-HIP-TESES-200b5d322028808ba872c03248cce5ac?source=copy_link)
-- 📓 [Notebook Completo no Google Colab (Testes Estatísticos e Regressões em Python)](https://colab.research.google.com/drive/1quOxk92ReWGKQInZWJTejArk3STQUP76?usp=sharing)
-- 📊 [Apresentação Executiva (Google Slides)](https://docs.google.com/presentation/d/1YaAlAVo6Mgmx3_J5_hPPOMxjTDW1e4HEAwfG4YMLL7s/edit?usp=sharing)
+ **Links Rápidos:**
+-  [Relatório Completo no Notion](https://app.notion.com/p/FICHA-T-CNICA_-PROJETO-2-HIP-TESES-200b5d322028808ba872c03248cce5ac?source=copy_link)
+-  [Notebook Completo no Google Colab (Testes Estatísticos e Regressões em Python)](https://colab.research.google.com/drive/1quOxk92ReWGKQInZWJTejArk3STQUP76?usp=sharing)
+-  [Apresentação Executiva (Google Slides)](https://docs.google.com/presentation/d/1YaAlAVo6Mgmx3_J5_hPPOMxjTDW1e4HEAwfG4YMLL7s/edit?usp=sharing)
 
 ---
 
@@ -19,11 +19,11 @@
 
 | # | Hipótese Levantada pela Gravadora | Teste / Modelo Aplicado | Resultado Estatístico | Veredito |
 | :-: | :--- | :--- | :--- | :---: |
-| **H1** | Músicas com **BPM mais alto** fazem mais sucesso em streams no Spotify. | Correlação de Pearson + Shapiro-Wilk + Regressão Linear OLS | $r = -0.0023$ \| $R^2 = 0.000005$ (Coef.: $-46\text{k}$ streams/BPM) | ❌ **Refutada** |
-| **H2** | Músicas populares no ranking do **Spotify** têm desempenho semelhante na **Deezer, Apple Music e Shazam**. | Correlação Cross-Plataforma + Regressão Linear Simples | Spotify $\times$ Deezer ($r = 0.60, R^2 = 36\%$) \| Apple ($r = 0.55, R^2 = 30\%$) \| Shazam ($r = 0.61, R^2 = 37\%$) | ⚠️ **Parcialmente Confirmada** |
-| **H3** | A presença em um **maior número de playlists** está associada a mais streams. | Correlação + Regressão Linear Simples (`soma_playlists` $\rightarrow$ `streams`) | **$r = 0.78$** \| **$R^2 = 61\%$** (Intercepto: $231\text{M}$; $+49,8\text{k}$ streams por playlist) | ✅ **Confirmada** *(associação, não causalidade)* |
-| **H4** | Artistas com **maior número de músicas** no catálogo acumulam mais streams totais. | Agregação por Artista + Regressão Linear (`total_tracks` $\rightarrow$ `total_streams`) | **$r = 0.78$** \| **$R^2 = 61\%$** ($+501\text{M}$ streams por faixa adicional na amostra top) | ✅ **Confirmada** *(com ressalva de viés de seleção)* |
-| **H5** | As **características acústicas da música** (`danceability`, `energy`, `valence`, `key`, `mode`, etc.) explicam o volume de streams. | Mann-Whitney (`mode`), Kruskal-Wallis (`key`), Regressão Múltipla OLS + VIF | Mann-Whitney $p = 0.1088$ \| Kruskal-Wallis $p = 0.9195$ \| **OLS Múltipla $R^2 = 2.9\%$** | ❌ **Refutada** |
+| **H1** | Músicas com **BPM mais alto** fazem mais sucesso em streams no Spotify. | Correlação de Pearson + Shapiro-Wilk + Regressão Linear OLS | $r = -0.0023$ \| $R^2 = 0.000005$ (Coef.: $-46\text{k}$ streams/BPM) |  **Refutada** |
+| **H2** | Músicas populares no ranking do **Spotify** têm desempenho semelhante na **Deezer, Apple Music e Shazam**. | Correlação Cross-Plataforma + Regressão Linear Simples | Spotify $\times$ Deezer ($r = 0.60, R^2 = 36\%$) \| Apple ($r = 0.55, R^2 = 30\%$) \| Shazam ($r = 0.61, R^2 = 37\%$) |  **Parcialmente Confirmada** |
+| **H3** | A presença em um **maior número de playlists** está associada a mais streams. | Correlação + Regressão Linear Simples (`soma_playlists` $\rightarrow$ `streams`) | **$r = 0.78$** \| **$R^2 = 61\%$** (Intercepto: $231\text{M}$; $+49,8\text{k}$ streams por playlist) |  **Confirmada** *(associação, não causalidade)* |
+| **H4** | Artistas com **maior número de músicas** no catálogo acumulam mais streams totais. | Agregação por Artista + Regressão Linear (`total_tracks` $\rightarrow$ `total_streams`) | **$r = 0.78$** \| **$R^2 = 61\%$** ($+501\text{M}$ streams por faixa adicional na amostra top) |  **Confirmada** *(com ressalva de viés de seleção)* |
+| **H5** | As **características acústicas da música** (`danceability`, `energy`, `valence`, `key`, `mode`, etc.) explicam o volume de streams. | Mann-Whitney (`mode`), Kruskal-Wallis (`key`), Regressão Múltipla OLS + VIF | Mann-Whitney $p = 0.1088$ \| Kruskal-Wallis $p = 0.9195$ \| **OLS Múltipla $R^2 = 2.9\%$** |  **Refutada** |
 
 ---
 
